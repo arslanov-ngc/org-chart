@@ -59,6 +59,14 @@
   height: 2px;
 }
 
+.column-wrapper.right-line .right-line {
+  top: calc(50% + 1px);
+  transform: translateY(-50%);
+  right: -32px;
+  width: 32px;
+  height: 2px;
+}
+
 .column-wrapper.top-line .top-line {
   top: -30px;
   left: 50%;
@@ -88,6 +96,10 @@
   left: 50%;
   width: calc(100% + 34px);
   height: 2px;
+}
+
+.row-wrapper .column-wrapper:last-child .top-right-line {
+  display: none;
 }
 
 .column-wrapper.main.top-right-line .top-right-line {

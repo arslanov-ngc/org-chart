@@ -12,12 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="org-chart-wrapper">
-        {data.map((row: any, i: any) => {
+        {data.map((row: any, rowIndex: any) => {
           return (
-            <div className="row-wrapper" key={i}>
-              {row.map((column: any, i: any) => (
-                <React.Fragment key={i}>
-                  {row.find((c: any) => c?.isMain)?.id == column.id ? (
+            <div className="row-wrapper" key={rowIndex}>
+              {row.map((column: any, columnIndex: any) => (
+                <React.Fragment key={columnIndex}>
+                  {rowIndex === 0 && columnIndex === 0 ? (
                     <>
                       {Array(20)
                         .fill('')
@@ -30,12 +30,13 @@ export default function Home() {
                     </>
                   ) : null}
                   <div
-                    className={`column-wrapper 
-                    ${column?.className?.join(' ')} 
-                    ${column.hasInfo ? 'box' : ''} 
-                    ${column.isMain ? 'main bottom-line' : ''} 
-                    ${column.isSecondary ? `main ${row.length > 2 ? 'top-line top-right-line left-line' : 'left-line'}` : ''} 
-                    ${column.isNextChild ? 'left-line' : ''}`}
+                    className={`column-wrapper box
+                    ${rowIndex === 0 && columnIndex === 0 ? 'main bottom-line' : ''} 
+                    ${rowIndex > 1 && columnIndex === 0 ? `main ${row.length > 2 ? 'top-line top-right-line left-line' : 'left-line'}` : ''} 
+                    ${!(rowIndex === 0 && columnIndex === 0) && row.length > 2 && `top-line`} 
+                    ${row.at(-1).id !== column?.id && !(rowIndex === 0 && columnIndex === 0) && row.length > 2 && 'top-right-line'}
+                    ${(rowIndex === 0 && columnIndex === 0) || (rowIndex > 1 && row.length < 3 && columnIndex === 0) ? 'right-line' : ''}
+                    `}
                   >
                     <h3>{column.title}</h3>
                     <span className="strikethrough"></span>
@@ -45,16 +46,14 @@ export default function Home() {
                     <span className="right-line"></span>
                     <span className="top-right-line"></span>
                   </div>
-                  {row[i - 1]?.isMain ? null : <div className={`column-wrapper visually-hidden`}></div>}
+                  <div className="column-wrapper visually-hidden"></div>
                   {column.hasOwnProperty('children') &&
                     column.children.map((child: any, i: any) => {
                       return (
                         <React.Fragment key={i}>
                           <div
-                            className={`column-wrapper column-child top-line top-left-line 
+                            className={`column-wrapper column-child top-line top-left-line box
                             ${row.length > 2 ? 'top-right-line' : ''} 
-                            ${child.hasInfo ? 'box' : ''} 
-                            ${child.isMain ? 'main' : ''} 
                             ${i === 0 ? 'first-child' : ''}`}
                           >
                             <h3>{child.title}</h3>

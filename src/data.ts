@@ -1,216 +1,149 @@
 type ChildObject = {
   id: number;
-  className?: string[];
-  hasInfo: boolean;
   title?: string;
 };
 
 type ParentObject = {
   id: number;
-  className?: string[];
   title?: string;
-  hasInfo?: boolean;
-  isMain?: boolean;
-  isSecondary?: boolean;
-  isNextChild?: boolean;
   children?: ChildObject[];
 };
 
 export const data: ParentObject[][] = [
   [
     {
-      id: 5,
-      hasInfo: true,
-      title: '',
-      isMain: true,
-    },
-    {
-      id: 7,
-      isNextChild: true,
-      hasInfo: true,
-      title: '',
-    },
-  ],
-  [
-    {
       id: 1,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
       title: '',
     },
     {
       id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      title: '',
     },
+  ],
+  [
     {
       id: 3,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      title: '',
+    },
+    {
+      id: 4,
     },
     {
       id: 5,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
     },
     {
-      id: 52,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 6,
     },
     {
       id: 7,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
     },
     {
-      id: 7,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 8,
     },
     {
-      id: 7,
-      className: ['top-line'],
-      hasInfo: true,
+      id: 9,
+    },
+    {
+      id: 10,
     },
   ],
   [
     {
-      id: 1,
-      isSecondary: true,
-      hasInfo: true,
+      id: 11,
       title: '',
     },
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 12,
       children: [
         {
-          id: 1,
-          hasInfo: true,
+          id: 13,
           title: '',
         },
         {
-          id: 1,
-          hasInfo: true,
+          id: 14,
           title: '',
         },
       ],
     },
     {
-      id: 7,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 15,
     },
 
     {
-      id: 7,
-      className: ['top-line'],
-      hasInfo: true,
+      id: 16,
     },
   ],
   [
     {
-      id: 1,
-      className: [''],
-      isSecondary: true,
-      hasInfo: true,
+      id: 17,
       title: '',
     },
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 18,
       children: [
         {
-          id: 1,
-          hasInfo: true,
+          id: 19,
           title: '',
         },
         {
-          id: 1,
-          hasInfo: true,
+          id: 20,
           title: '',
         },
       ],
     },
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 21,
       children: [
         {
-          id: 1,
-          hasInfo: true,
+          id: 22,
           title: '',
         },
         {
-          id: 1,
-          hasInfo: true,
+          id: 23,
           title: '',
         },
       ],
     },
     {
-      id: 7,
-      className: ['top-line'],
-      hasInfo: true,
+      id: 24,
     },
   ],
   [
     {
-      id: 1,
-      className: [''],
-      isSecondary: true,
-      hasInfo: true,
+      id: 26,
       title: '',
     },
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
+      id: 27,
       children: [
         {
-          id: 1,
-          className: ['top-line top-right-line top-left-line'],
-          hasInfo: true,
+          id: 28,
           title: '',
         },
         {
-          id: 1,
-          className: ['top-line top-right-line top-left-line'],
-          hasInfo: true,
+          id: 29,
           title: '',
         },
       ],
     },
     {
-      id: 7,
-      className: ['top-line'],
-      hasInfo: true,
+      id: 32,
     },
   ],
   [
     {
       id: 1,
-      isSecondary: true,
-      hasInfo: true,
       title: '',
     },
     {
       id: 2,
-      isNextChild: true,
-      hasInfo: true,
       children: [
         {
           id: 1,
-          hasInfo: true,
           title: '',
         },
         {
           id: 1,
-          hasInfo: true,
           title: '',
         },
       ],
@@ -218,29 +151,30 @@ export const data: ParentObject[][] = [
   ],
   [
     {
-      id: 1,
-      className: [''],
-      isSecondary: true,
-      hasInfo: true,
+      id: 334,
       title: '',
     },
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
-      isMain: false,
+      id: 554433,
+    },
+    {
+      id: 5542433,
+    },
+  ],
+  [
+    {
+      id: 33,
+      title: '',
+    },
+    {
+      id: 34,
     },
 
     {
-      id: 2,
-      className: ['top-line top-right-line'],
-      hasInfo: true,
-      isMain: false,
+      id: 53,
     },
     {
-      id: 7,
-      className: ['top-line'],
-      hasInfo: true,
+      id: 654,
     },
   ],
 ];
