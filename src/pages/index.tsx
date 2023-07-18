@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { data } from '../data';
+import React from 'react';
 
 export default function Home() {
   return (
@@ -15,12 +16,26 @@ export default function Home() {
           return (
             <div className="row-wrapper" key={i}>
               {row.map((column: any, i: any) => (
-                <>
+                <React.Fragment key={i}>
+                  {row.find((c: any) => c?.isMain)?.id == column.id ? (
+                    <>
+                      {Array(20)
+                        .fill('')
+                        .map((_, i) => (
+                          <div className={`column-wrapper left-line`} key={i}>
+                            <span className="strikethrough"></span>
+                            <span className="left-line"></span>
+                          </div>
+                        ))}
+                    </>
+                  ) : null}
                   <div
-                    className={`column-wrapper ${column.className.join(' ')} ${column.hasInfo ? 'box' : ''} ${
-                      column.isMain ? 'main' : ''
-                    }`}
-                    key={i}
+                    className={`column-wrapper 
+                    ${column?.className?.join(' ')} 
+                    ${column.hasInfo ? 'box' : ''} 
+                    ${column.isMain ? 'main bottom-line' : ''} 
+                    ${column.isSecondary ? `main ${row.length > 2 ? 'top-line top-right-line left-line' : 'left-line'}` : ''} 
+                    ${column.isNextChild ? 'left-line' : ''}`}
                   >
                     <h3>{column.title}</h3>
                     <span className="strikethrough"></span>
@@ -30,27 +45,32 @@ export default function Home() {
                     <span className="right-line"></span>
                     <span className="top-right-line"></span>
                   </div>
+                  {row[i - 1]?.isMain ? null : <div className={`column-wrapper visually-hidden`}></div>}
                   {column.hasOwnProperty('children') &&
                     column.children.map((child: any, i: any) => {
                       return (
-                        <div
-                          className={`column-wrapper column-child ${child.className.join(' ')} ${
-                            child.hasInfo ? 'box' : ''
-                          } ${child.isMain ? 'main' : ''} ${i === 1 ? 'first-child' : ''}`}
-                          key={i}
-                        >
-                          <h3>{child.title}</h3>
-                          <span className="strikethrough"></span>
-                          <span className="top-line"></span>
-                          <span className="bottom-line"></span>
-                          <span className="left-line"></span>
-                          <span className="right-line"></span>
-                          <span className="top-right-line"></span>
-                          <span className="top-left-line"></span>
-                        </div>
+                        <React.Fragment key={i}>
+                          <div
+                            className={`column-wrapper column-child top-line top-left-line 
+                            ${row.length > 2 ? 'top-right-line' : ''} 
+                            ${child.hasInfo ? 'box' : ''} 
+                            ${child.isMain ? 'main' : ''} 
+                            ${i === 0 ? 'first-child' : ''}`}
+                          >
+                            <h3>{child.title}</h3>
+                            <span className="strikethrough"></span>
+                            <span className="top-line"></span>
+                            <span className="bottom-line"></span>
+                            <span className="left-line"></span>
+                            <span className="right-line"></span>
+                            <span className="top-right-line"></span>
+                            <span className="top-left-line"></span>
+                          </div>
+                          <div className={`column-wrapper visually-hidden`}></div>
+                        </React.Fragment>
                       );
                     })}
-                </>
+                </React.Fragment>
               ))}
               <span className="row-line"></span>
             </div>

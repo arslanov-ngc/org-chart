@@ -91,7 +91,7 @@
 }
 
 .column-wrapper.main.top-right-line .top-right-line {
-  width: calc(100% - 26px);
+  width: calc(100% + 4px);
 }
 
 .column-child.top-left-line .top-left-line {
@@ -146,17 +146,13 @@
 }
 
 .column-wrapper.main {
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 240px;
+  max-width: 240px;
   border-color: rgba(19, 54, 136, 0.7);
 }
 
 .column-wrapper.main:hover {
   border-color: #133688;
-}
-
-.row-wrapper:first-child .column-wrapper {
-  width: 100%;
 }
 
 .visually-hidden {
