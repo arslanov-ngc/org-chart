@@ -24,7 +24,7 @@
 .row-wrapper .row-line {
   position: absolute;
   top: calc(50% + 2px);
-  left: -2px;
+  left: -4px;
   background-color: #555;
   width: 2px;
   height: calc(100% + 60px);
@@ -52,18 +52,16 @@
 }
 
 .column-wrapper.left-line .left-line {
-  top: calc(50% + 1px);
-  transform: translateY(-50%);
-  left: -32px;
-  width: 32px;
+  top: 50%;
+  left: -34px;
+  width: 34px;
   height: 2px;
 }
 
 .column-wrapper.right-line .right-line {
-  top: calc(50% + 1px);
-  transform: translateY(-50%);
-  right: -32px;
-  width: 32px;
+  top: 50%;
+  right: -34px;
+  width: 34px;
   height: 2px;
 }
 
@@ -84,7 +82,7 @@
 }
 
 .column-wrapper.bottom-line .bottom-line {
-  bottom: -34px;
+  bottom: -36px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
@@ -103,7 +101,7 @@
 }
 
 .column-wrapper.main.top-right-line .top-right-line {
-  width: calc(100% + 4px);
+  width: calc(100% + 6px);
 }
 
 .column-child.top-left-line .top-left-line {
@@ -161,6 +159,8 @@
   min-width: 240px;
   max-width: 240px;
   border-color: rgba(19, 54, 136, 0.7);
+  box-shadow: inset 1px 0 0px rgba(19, 54, 136, 0.7), inset -1px 0 0px rgba(19, 54, 136, 0.7),
+    inset 0 1px 0px rgba(19, 54, 136, 0.7), inset 0 -1px 0px rgba(19, 54, 136, 0.7);
 }
 
 .column-wrapper.main:hover {

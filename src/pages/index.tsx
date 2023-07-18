@@ -22,7 +22,7 @@ export default function Home() {
                       {Array(20)
                         .fill('')
                         .map((_, i) => (
-                          <div className={`column-wrapper left-line`} key={i}>
+                          <div className={`column-wrapper ${i === 0 && 'left-line'}`} key={i}>
                             <span className="strikethrough"></span>
                             <span className="left-line"></span>
                           </div>
